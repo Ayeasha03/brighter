@@ -367,12 +367,12 @@ justify-content: space-between;
 .service_item h3 {
     font-size: 1.2rem;
     margin: 15px 0 10px;
-    color: #333;
+    color: #dfdede;
 }
 .service_item p {
     padding: 0 15px 15px;
     font-size: 0.95rem;
-    color: #555;
+    color: #fff;
     line-height: 1.4;
 }
 /* Rodents Trap Section */
