@@ -957,6 +957,8 @@ header {
         align-items: center;
         flex-direction: column; 
         text-align: center;
+        margin-right: 30px;
+        margin-left: -20px;
     }
 
     .one img {
@@ -972,6 +974,8 @@ header {
     .hamburger-menu {
         margin-top: -50px;
         display: flex!important;
+        order: 2;
+        margin-right: 10px;
     }
     
       .nav_items li {
@@ -1011,6 +1015,9 @@ header {
         width: 80%;
         margin: 0 auto;
         text-align: center;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        order: 1;
     }
     /* Hero Section */
     #hero {
