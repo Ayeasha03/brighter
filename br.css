@@ -24,6 +24,10 @@ padding-right: 100px;
 .us a {
     text-decoration: none;
     color: white;
+    cursor: pointer;
+}
+.us a:hover {
+    color: #ccc;
 }
 
 header {
@@ -128,12 +132,18 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 button:hover {
     background-color: mediumblue;
 }
 .two {
     padding-top: 35px;
+}
+.two a {
+    color: #fff;
+    text-decoration: none;
+
 }
 #hero {
     position: relative;
@@ -189,11 +199,13 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.5) ;
     z-index: 1;
 }
+
 .hero_content button {
     display: inline-block;
     padding: 15px 30px;
     font-size: 1.2rem;
     color: #fff;
+    cursor: pointer;
     background-color: #3a377e ;
     border-radius: 50px;
     text-transform: uppercase;
@@ -201,6 +213,11 @@ button:hover {
     letter-spacing: 1px;
     transition: background 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.hero_content button a {
+    color: #fff;
+    text-decoration: none;
+    
 }
 .hero_content button:hover {
     background-color: #2980b9;
@@ -215,9 +232,10 @@ button:hover {
 }
 .hero_content2 {
     width: 80%;
-    height: 50%;
+    height: 70%;
     margin-left: 0;
     margin-top: 0;
+    overflow-y: hidden;
 }
 .hero_content2-a p {
     background-color: rgba(90, 87, 231, 0.5);
@@ -254,6 +272,7 @@ button:hover {
     margin-top: 20px;
     font-size: 16px;
     color: #fff;
+    cursor: pointer;
     z-index: 50;
     background-color: #726bf5 ;
     text-transform: uppercase;
@@ -261,6 +280,11 @@ button:hover {
     letter-spacing: 1px;
     transition: background 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.hero_content2  a {
+    color: #fff;
+    text-decoration: none;
+    
 }
 .hero_content2 button:hover {
     background-color: #2980b9;

@@ -12,7 +12,7 @@ menuToggle.addEventListener("click", () => {
       navItems.classList.remove('active');
     });
   });
-});s
+});
 
 const slides = document.querySelectorAll(".hero_slide");
 const dotsContainer = document.querySelector(".dots-container");
