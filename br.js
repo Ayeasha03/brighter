@@ -1,18 +1,27 @@
 const menuToggle = document.getElementById("mobile-menu");
 const navItems = document.querySelector(".nav_items");
 
-menuToggle.addEventListener("click", () => {
-  navItems.classList.toggle("active");  
-  menuToggle.classList.toggle("open");
-  
-  
-  const navLinks = document.querySelectorAll('.nav_items a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navItems.classList.remove('active');
+// Debounce Function
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
+// Apply Debounce to Menu Toggle
+menuToggle.addEventListener("click", debounce(() => {
+    navItems.classList.toggle("active");
+    menuToggle.classList.toggle("open");
+
+    const navLinks = document.querySelectorAll('.nav_items a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navItems.classList.remove('active');
+        });
     });
-  });
-});
+}, 300));
 
 const slides = document.querySelectorAll(".hero_slide");
 const dotsContainer = document.querySelector(".dots-container");
@@ -50,18 +59,13 @@ function updateDots() {
     });
 }
 
-// Navigation Buttons
-document.getElementById("nextSlide").addEventListener("click", () => {
+
+// Automatic Slide Transition
+setInterval(() => {
     currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
     updateDots();
-});
-
-document.getElementById("prevSlide").addEventListener("click", () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-    updateDots();
-});
+}, 5000); // Change slide every 5 seconds
 
 // Initialize Slider
 createDots();

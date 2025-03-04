@@ -9,7 +9,9 @@
 }
 body {
     font-family: 'Roboto', sans-serif;
-    
+   
+    overflow-x: hidden;
+    margin-right: -40px;
 }
 .zero {
     background-color: #3a377e;
@@ -17,9 +19,12 @@ body {
     height: 45px;
 }
 .us {
-padding-left: 75.5%;
-padding-top: 14px;
-padding-right: 100px;
+    display: flex;
+    justify-content: flex-end; 
+    padding: 10px 20px;
+    max-width: 95%;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 .us a {
     text-decoration: none;
@@ -184,10 +189,11 @@ button:hover {
     width: 100%;
     height: 100%;
     display: flex;
+    opacity: 0;
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: left 0.5s ease;
+    transition: opacity 1s ease-in-out
 }
 .hero_slide::before {
     content: "";
@@ -226,6 +232,8 @@ button:hover {
 
 .hero_slide.active {
     left: 0;
+    opacity: 1;
+    z-index: 2;
 }
 .hero_slide.prev {
     left:-100%;
@@ -264,9 +272,7 @@ button:hover {
     z-index: 2;
     text-align: left;
     color: white;
-    
 }
-
 .hero_content2 button {
     padding: 12px 28px;
     margin-top: 20px;
@@ -291,22 +297,6 @@ button:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
-#prevSlide, #nextSlide {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    border: none;
-    padding: 0 10px;
-    z-index: 10;
-    font-size: 24px;
-}
-#prevSlide {
-    left: 30px;
-}
-#nextSlide {
-    right: 40px;
-}
 .dots-container {
     position: absolute;
     bottom: 20px;
@@ -399,6 +389,7 @@ justify-content: space-between;
     color: #fff;
     line-height: 1.4;
 }
+
 /* Rodents Trap Section */
 .rodents-trap {
     text-align: center;
@@ -408,7 +399,7 @@ justify-content: space-between;
 .rodents-trap h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-    color: #3a377e; 
+    color: #3a377e;
 }
 
 .rodents-trap p {
@@ -416,6 +407,15 @@ justify-content: space-between;
     margin-bottom: 60px;
     color: #555;
     line-height: 1.4rem;
+}
+
+/* Trap Gallery */
+.trap-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+    gap: 10px;
+    overflow-y: hidden;
+    max-width: 1200px;
 }
 
 .card {
@@ -432,22 +432,22 @@ justify-content: space-between;
     perspective: 1000px;
     box-shadow: 0 0 0 5px #ffffff80;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  
-  .card img {
+}
+
+.card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     margin-bottom: 40px;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  
-  .card:hover {
+}
+
+.card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-  }
-  
-  .card__content {
+}
+
+.card__content {
     position: absolute;
     top: 0;
     left: 0;
@@ -460,41 +460,25 @@ justify-content: space-between;
     transform: rotateX(-90deg);
     transform-origin: bottom;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  
-  .card:hover .card__content {
+}
+
+.card:hover .card__content {
     transform: rotateX(0deg);
-  }
-  
-  .card__title {
+}
+
+.card__title {
     margin: 0;
     font-size: 24px;
     color: #333;
     font-weight: 700;
-  }
-  
-  .card:hover svg {
-    scale: 0;
-  }
-  
-  .card__description {
+}
+
+.card__description {
     margin: 10px 0 0;
     font-size: 14px;
     color: #777;
     line-height: 1.4;
-  }
-  
-
-.trap-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px; 
-    overflow-y: hidden;
-    max-width: 1200px;
 }
-
-
-
 #about {
     padding: 100px; 
     margin: 0 auto;
@@ -759,10 +743,101 @@ overlay: white;
     padding-top: 10px;
 }
 
+@media (max-width: 1024px) {
+    .zero {
+        height: 36px;
+    }
+    body {
+        font-size: 14px;
+    }
+    header {
+        height: auto;
+    }
+    .header {
+        padding: 0 20px;
+        justify-content: space-between;
+        margin-right: 50px;
+    }
+    .one img {
+        width: 80px;
+        height: 80px;
+    }
+    .one p {
+        font-size: 14px;
+    }
+    .nav_items {
+        font-size: 12px;
+        gap: 10px;
+    }
+    .two button {
+        width: auto;
+        font-size: 12px;
+        padding: 10px;
+    }
+    #hero {
+        height: 70vh;
+        padding: 10px;
+    }
+    .hero_content .h {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .hero_content .g {
+        font-size: 1.2rem;
+    }
+    .hero_content button {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+    .hero_content2 {
+        width: 90%;
+        margin-left: 5%;
+    }
+    .hero_content2-a p, .hero_content2-b p {
+        font-size: 18px;
+        line-height: 1.8rem;
+    }
+    .hero_content2 button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+    #services {
+        padding:50px;
+    }
+    .trap-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .card {
+        width: auto;
+    }
+   #about{
+    padding: 50px;
+   } 
+   .new {
+    min-width: 250px
+   }
+   
+    #work {
+        padding: 50px;
+    }
+    .work_container {
+        display: block;
+        text-align: center;
+        gap: 10px;
+    }
+    .work_item {
+        width: 200px;
+        margin: 20px auto;
+    }
+
+}
+
+
 @media (max-width: 768px) {
     body {
         font-size: 14px;
-        padding: 0 10px;
+        margin-right: -10px;
+        
     }
     h1, h2, h3 {
         font-size: 1.5rem;
@@ -773,9 +848,11 @@ overlay: white;
         line-height: 1.5;
     }
     .us {
-        padding-left: 60%;
-        margin-top: -10px;
-       
+        padding: 8px 16px;
+        text-align: center;
+        width: 100%;
+        margin-top: 0;
+       box-sizing: border-box
     }
     .zero {
         width: 100%;
@@ -789,6 +866,7 @@ header {
     padding: 0 40px;
     justify-content: space-between;
     gap: 4px;
+    margin-right: -10px;
 }
 .one {
     
@@ -819,6 +897,7 @@ header {
    }
     #hero {
         height: 70vh;
+        margin-right: -30px;
     }
     .hero_content .h {
         font-size: 2.4rem;
@@ -837,6 +916,7 @@ header {
     }
     .hero_content2 {
         width: 100%;
+        margin-left: 20px;
         margin-top: -100px;
         padding: 10px 20px;
     }
@@ -857,9 +937,6 @@ header {
         width: 120px;
         padding: 8px 10px;
     }
-    #prevSlide, #nextSlide {
-        display: none;
-    }
     .dot {
         width: 8px;
         height: 8px;
@@ -869,11 +946,26 @@ header {
       width: 45%;
     }
     .trap-gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px; 
+        padding: 20px; 
     }
     .card {
-        width:auto
+        width: 100%; 
+        max-width: 500px;
+        margin: 10px auto;
+    }
+    .card img {
+        height: auto;
+    }
+    .card__content {
+        padding: 15px; 
+    }
+    .card__title {
+        font-size: 1.2rem;
+    }
+    .card__description {
+        font-size: 1rem; 
     }
     .about {
         padding: 100px 50px;
@@ -958,7 +1050,13 @@ header {
 }
 
 @media (max-width: 425px) {
-    .zero .us {
+    .us {
+        padding: 8px 16px;
+        text-align: center;
+        width: 100%;
+        margin-top: 0;
+    }
+    .hero {
         padding-left: 0;
         padding-right: 0;
         text-align: center;
@@ -981,7 +1079,7 @@ header {
         align-items: center;
         flex-direction: column; 
         text-align: center;
-        margin-right: 30px;
+        margin-right: -36px;
         margin-left: -20px;
     }
 
@@ -1037,10 +1135,9 @@ header {
 
     .two button {
         width: 80%;
-        margin: 0 auto;
         text-align: center;
-        margin-bottom: 20px;
-        margin-right: 10px;
+        margin-top: 3px;
+        
         order: 1;
     }
     /* Hero Section */
@@ -1051,29 +1148,39 @@ header {
     }
     .hero_content .h {
         font-size: 1.5rem;
+        line-height: 2rem;
         margin-bottom: 10px;
     }
     .hero_content .g {
         font-size: 0.9rem;
     }
     .hero_content button {
-        font-size: 10px;
-        padding: 8px 12px;
+        font-size: 0.8rem;
+        padding: 8px 15px;
     }
     .hero_content2 {
         width: 95%; 
         margin-left: 2.5%; 
     }
 
-    .hero_content2-a p,
+    .hero_content2-a p {
+        font-size: 14px; 
+        line-height: 1.1rem;
+        padding: 8px 16px;
+        height: auto;
+    }
     .hero_content2-b p {
-        font-size: 16px; 
-        line-height: 1.6rem; 
+        font-size: 14px; 
+        line-height: 1.1rem;
+        padding: 10px 20px;
+        height: auto;
     }
 
     .hero_content2 button {
         font-size: 8px;
         width: 70px; 
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
 
     #services {
@@ -1113,28 +1220,46 @@ header {
     #about {
         padding: 20px;
     }
+
     .about {
         padding: 20px;
     }
+
     .all {
         display: block;
         align-items: center;
         width: 100%;
+        text-align: center; 
     }
+
     .half {
         width: 100%;
+        margin-bottom: 20px; 
     }
+
     .left {
         width: 100%;
     }
+
     .right {
-        width: 100%;
-    }
-    .team_photo img {
-        width: 77%;
+        width: 100%; 
     }
 
-    /* Testimonials Section */
+    .team_photo img {
+        width: 80%; 
+        height: auto; 
+        margin-bottom: 20px; 
+    }
+
+    .new h3 {
+        font-size: 1rem; 
+    }
+
+    .new p {
+        font-size: 0.9rem; 
+        line-height: 1.4; 
+    }
+
     #testimonials {
         padding: 20px;
     }
@@ -1188,5 +1313,26 @@ header {
 }
 
 @media (max-width: 320px) {
-    
+    .hero_content2-a p {
+        font-size: 12px; 
+        line-height: 0.9rem;
+        padding: 8px 18px;
+        height: auto;
+    }
+    .hero_content2-b p {
+        font-size: 12px; 
+        line-height: 0.9rem;
+        padding: 10px 20px;
+        height: auto;
+    }
+
+    .hero_content2 button {
+        font-size: 6px;
+        width: 70px; 
+        margin-top: 6px;
+        padding: 6px 10px;
+        margin-bottom: 30px;
+        margin-left: -4px;
+    }
+
   }
