@@ -3,20 +3,23 @@
 *::after{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    
+    box-sizing: border-box;  
 }
 body {
     font-family: 'Roboto', sans-serif;
-   
     overflow-x: hidden;
-    margin-right: -40px;
+    padding-top: 125px;
 }
+
 .zero {
     background-color: #3a377e;
     width: 100%;
     height: 45px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    
 }
 .us {
     display: flex;
@@ -38,16 +41,23 @@ body {
 header {
     width: 100%;
     height: auto;
-    overflow-y: hidden;
     background-color: white;
     color:#074f97;
     
 }
+
 .header {
     justify-content: space-between;
     display: flex;
     padding-left: 100px;
     padding-right: 100px;
+    width: 100%;
+    left: 0;
+    position: fixed;
+    top: 45px;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .one {
     font-weight: bold;
@@ -155,6 +165,7 @@ button:hover {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    
 }
 .hero-img {
     width: 100%;
@@ -747,6 +758,9 @@ overlay: white;
     .zero {
         height: 36px;
     }
+    .us {
+        padding: 9px 20px;
+    }
     body {
         font-size: 14px;
     }
@@ -757,6 +771,7 @@ overlay: white;
         padding: 0 20px;
         justify-content: space-between;
         margin-right: 50px;
+        margin-top: -15px;
     }
     .one img {
         width: 80px;
@@ -777,6 +792,7 @@ overlay: white;
     #hero {
         height: 70vh;
         padding: 10px;
+        
     }
     .hero_content .h {
         font-size: 2.5rem;
@@ -848,7 +864,7 @@ overlay: white;
         line-height: 1.5;
     }
     .us {
-        padding: 8px 16px;
+        padding: 4px 16px;
         text-align: center;
         width: 100%;
         margin-top: 0;
@@ -856,17 +872,22 @@ overlay: white;
     }
     .zero {
         width: 100%;
-        height: 30px;
+        height: 25px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        overflow-y: none;
     }
 header {
     height: 110px;
-    
+    overflow-y: none;
+
 }
 .header {
     padding: 0 40px;
     justify-content: space-between;
     gap: 4px;
     margin-right: -10px;
+    margin-top: -20px;
 }
 .one {
     
@@ -898,6 +919,7 @@ header {
     #hero {
         height: 70vh;
         margin-right: -30px;
+        margin-top:-135px ;
     }
     .hero_content .h {
         font-size: 2.4rem;
@@ -1051,16 +1073,18 @@ header {
 
 @media (max-width: 425px) {
     .us {
-        padding: 8px 16px;
+        padding: 0 16px;
         text-align: center;
         width: 100%;
         margin-top: 0;
+        font-size:10px;
+        padding-top: 4px;
     }
-    .hero {
+    .zero {
         padding-left: 0;
         padding-right: 0;
         text-align: center;
-        padding-top: 8px;
+        padding-top: 2px;
         margin-top: 0;
     }
 
@@ -1069,35 +1093,41 @@ header {
         justify-content: space-between;
         align-items: center;
         padding: 0 10px;
-        padding-top: -24px;
+        height: 50px;
+        
+        padding-top: 5px;
         background-color: #fff;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
     .one {
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; 
-        text-align: center;
-        margin-right: -36px;
-        margin-left: -20px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 18px;
+}
+
 
     .one img {
-        width: 70px; 
-        height: 70px;
+        margin-bottom: -10px;
+        width: 40px; 
+        height: 40px;
+        margin-top: -225px;
     }
 
     .one p {
-        padding-top: 10px;
-        font-size: 1rem; 
+        padding-top: 0px;
+        font-size: 10px; 
     }
 
     .hamburger-menu {
-        margin-top: -50px;
+        margin-top: 0;
+        position: relative;
         display: flex!important;
         order: 2;
         margin-right: 10px;
+        margin-bottom: 8px;
     }
     
       .nav_items li {
@@ -1105,7 +1135,7 @@ header {
       }
       .nav_items {
         position: fixed;
-        top: 0;
+        top: 10px;
         left: -300px;
         height: 55vh;
         overflow-y: hidden;
@@ -1134,10 +1164,11 @@ header {
 
 
     .two button {
-        width: 80%;
+        width: 70%;
         text-align: center;
-        margin-top: 3px;
-        
+        margin-top: 28px;
+        padding: 3px 2px;
+        font-size: 10px;
         order: 1;
     }
     /* Hero Section */
@@ -1145,7 +1176,9 @@ header {
         height: 60vh;
         text-align: center;
         padding: 10px;
+        top: -25px;
     }
+    
     .hero_content .h {
         font-size: 1.5rem;
         line-height: 2rem;
